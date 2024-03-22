@@ -1,0 +1,155 @@
+body {
+    background-color: #5D3587;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+
+    padding: 20px !important;
+    background-color: #392467;
+    width: 25vw;
+    height: 50vh;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container::before {
+    content: "";
+    background: linear-gradient(0deg, transparent, white, white);
+    position: absolute;
+    top: -30%;
+    left: -40%;
+    width: 25vw;
+    height: 50vh;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.container::after {
+    content: "";
+    background: linear-gradient(0deg, transparent, white, white);
+    position: absolute;
+    top: -30%;
+    left: -40%;
+    width: 25vw;
+    height: 50vh;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: 3s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.form {
+    position: absolute;
+    width: 98%;
+    height: 98%;
+    background-color: #A367B1;
+    z-index: 10 !important;
+    inset: 2px;
+    border-radius: 1rem;
+    left: 1%;
+    top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+.form h1 {
+    color: white;
+}
+.input{
+    width: 100%;
+    display: flex;
+}
+.form .input > #username,
+.form .input > #password {
+    width: 90%;
+    height: 35px;
+    background-color: transparent;
+    margin: auto;
+    margin-top: 25px;
+    border: none;
+    outline: none;
+    z-index: 10;
+    font-size: 1.1em;
+}
+.input span{
+    position: absolute;
+    margin-top: 30px;
+    left: 20px;
+    pointer-events: none;
+    transition: .5s linear;
+}
+.input input:valid ~ span,
+.input input:focus ~ span{
+    color: white;
+    transform: translateY(-39px);
+    font-size: .7em;
+}
+.input i{
+    transition: .5s linear;
+    position: absolute;
+    left: 20px;
+    width: 90%;
+    height: 2px;
+    border-radius: 4px;
+    margin-top: 50px;
+    background-color: white;
+}
+.input input:focus ~ i{
+    margin-top: 10px;
+    height: 50px;
+}
+.links{
+    width: 90%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.links span:hover{
+    cursor: pointer;
+    color: white;
+    transition: .4s linear;
+}
+#submit{
+    align-self: self-start;
+    margin-left: 1.2rem;
+    width: 30%;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 40px;
+    background-color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#submit:hover{
+    background-color: transparent;
+    border: 1px solid white;
+    transition: .4s linear;
+    color: white;
+}
